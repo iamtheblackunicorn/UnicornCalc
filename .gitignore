@@ -56,3 +56,5 @@ GeneratedPluginRegistrant.java
 Flutter/ephemeral/
 Pods/
 xcuserdata/
+!Flutter-Release.xcconfig
+!Flutter-Debug.xcconfig
