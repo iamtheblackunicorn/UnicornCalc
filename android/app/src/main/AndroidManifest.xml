@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.blackunicorn.unicorncalc">
    <application
-        android:label="unicorncalc"
+        android:label="Unicorn Calc"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
