@@ -16,8 +16,8 @@ Since I didn't like the calculator that shipped with my Mac and my Android devic
   - ***[Download for Android](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/v.1.0.0/UnicornCalc-v1.0.0-DarkHorn-Release.apk) (15.62 MB)***
   - ***[Download for Mac OSX](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/v.1.0.0/UnicornCalc-v1.0.0-DarkHorn-Release.app.zip) (12.03 MB)***
 - ***Black Mamba*** (v.1.1.0):
-  - ***[Download for Android](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/v.1.1.0/UnicornCalc-v1.1.0-BlackMamba-Release.apk) (15.8 MB)***
-  - ***[Download for Mac OSX](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/v.1.1.0/UnicornCalc-v1.1.0-BlackMamba-Release.app.zip) (12.6 MB)***
+  - ***[Download for Android](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/1.1.0/UnicornCalc-v1.1.0-BlackMamba-Release.apk) (15.8 MB)***
+  - ***[Download for Mac OSX](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/1.1.0/UnicornCalc-v1.1.0-BlackMamba-Release.app.zip) (12.6 MB)***
 
 ## Building :hammer:
 
