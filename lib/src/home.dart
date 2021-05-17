@@ -1,4 +1,10 @@
+/*
+UNICORN CALC by Alexander Abraham a.k.a. "The Black Unicorn".
+Licensed under the MIT license.
+*/
+
 import 'dart:io';
+import 'widgets.dart';
 import 'constants.dart';
 import 'calculator.dart';
 import 'package:flutter/material.dart';
@@ -18,444 +24,205 @@ class CalculatorState extends State<Calculator> {
               new SizedBox(
                 height: stdSpacer
               ),
-              new Padding(
-                padding: EdgeInsets.all(stdPadding),
-                child: new Container(
-                  width: stdWidth,
-                  height: stdHeight,
-                  decoration: new BoxDecoration(
-                    borderRadius: BorderRadius.circular(stdRounding),
-                    border: Border.all(
-                      width: borderWidth,
-                      color:accentColor
-                    ),
-                    color: mainColor,
-                  ),
-                  child: new Center(
-                    child:new Padding(
-                      padding: EdgeInsets.all(stdPadding),
-                      child:new Text(
-                        '$initialIO',
-                        style: new TextStyle(
-                          color: accentColor,
-                          fontSize: stdPadding,
-                          fontFamily: '$defaultFont'
-                        )
-                      )
-                    )
-                  )
-                )
-              ),
-              new SizedBox(
-                height: stdSpacer
-              ),
+              new IOHandler(userText: '$initialIO'),
+              new SizedBox(height: stdSpacer),
               new Container(
                 width: stdWidth,
                 child: new Center(
                   child: new Column(
                     children: <Widget> [
+
                       new Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget> [
-                        new Padding(
-                          padding: EdgeInsets.all(stdPadding),
-                          child:new RaisedButton(
-                            shape: CircleBorder(),
-                            padding: EdgeInsets.all(stdPadding),
-                            color: accentColor,
-                            child: new Text(
-                              '$one',
-                              style: new TextStyle(
-                                color: mainColor,
-                                fontSize: stdFontSize,
-                                fontFamily: '$defaultFont'
-                              )
-                            ),
+                          new NumberPad(
+                            userText: '$one',
                             onPressed: () {
                               setState((){
                                 initialIO = initialIO + one;
                               });
                             }
                           ),
-                        ),
-                        new Padding(
-                          padding: EdgeInsets.all(stdPadding),
-                          child:new RaisedButton(
-                            shape: CircleBorder(),
-                            padding: EdgeInsets.all(stdPadding),
-                            color: accentColor,
-                            child: new Text(
-                              '$two',
-                              style: new TextStyle(
-                                color: mainColor,
-                                fontSize: stdFontSize,
-                                fontFamily: '$defaultFont'
-                              )
-                            ),
+                          new NumberPad(
+                            userText: '$two',
                             onPressed: () {
                               setState((){
                                 initialIO = initialIO + two;
                               });
                             }
                           ),
-                        ),
-                        new Padding(
-                          padding: EdgeInsets.all(stdPadding),
-                          child:new RaisedButton(
-                            shape: CircleBorder(),
-                            padding: EdgeInsets.all(stdPadding),
-                            color: accentColor,
-                            child: new Text(
-                              '$three',
-                              style: new TextStyle(
-                                color: mainColor,
-                                fontSize: stdFontSize,
-                                fontFamily: '$defaultFont'
-                              )
-                            ),
+                          new NumberPad(
+                            userText: '$three',
                             onPressed: () {
                               setState((){
                                 initialIO = initialIO + three;
                               });
                             }
                           ),
-                        ),
-                      ]
-                    ),
-                    new Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget> [
-                      new Padding(
-                        padding: EdgeInsets.all(stdPadding),
-                        child:new RaisedButton(
-                          shape: CircleBorder(),
-                          padding: EdgeInsets.all(stdPadding),
-                          color: accentColor,
-                          child: new Text(
-                            '$four',
-                            style: new TextStyle(
-                              color: mainColor,
-                              fontSize: stdFontSize,
-                              fontFamily: '$defaultFont'
-                            )
-                          ),
-                          onPressed: () {
-                            setState((){
-                              initialIO = initialIO + four;
-                            });
-                          }
-                        ),
+                        ]
                       ),
-                      new Padding(
-                        padding: EdgeInsets.all(stdPadding),
-                        child:new RaisedButton(
-                          shape: CircleBorder(),
-                          padding: EdgeInsets.all(stdPadding),
-                          color: accentColor,
-                          child: new Text(
-                            '$five',
-                            style: new TextStyle(
-                              color: mainColor,
-                              fontSize: stdFontSize,
-                              fontFamily: '$defaultFont'
-                            )
+
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget> [
+                          new NumberPad(
+                            userText: '$four',
+                            onPressed: () {
+                              setState((){
+                                initialIO = initialIO + four;
+                              });
+                            }
                           ),
-                          onPressed: () {
-                            setState((){
-                              initialIO = initialIO + five;
-                            });
-                          }
-                        ),
-                      ),
-                      new Padding(
-                        padding: EdgeInsets.all(stdPadding),
-                        child:new RaisedButton(
-                          shape: CircleBorder(),
-                          padding: EdgeInsets.all(stdPadding),
-                          color: accentColor,
-                          child: new Text(
-                            '$six',
-                            style: new TextStyle(
-                              color: mainColor,
-                              fontSize: stdFontSize,
-                              fontFamily: '$defaultFont'
-                            )
+                          new NumberPad(
+                            userText: '$five',
+                            onPressed: () {
+                              setState((){
+                                initialIO = initialIO + five;
+                              });
+                            }
                           ),
-                          onPressed: () {
-                            setState((){
-                              initialIO = initialIO + six;
-                            });
-                          }
-                        ),
+                          new NumberPad(
+                            userText: '$six',
+                            onPressed: () {
+                              setState((){
+                                initialIO = initialIO + six;
+                              });
+                            }
+                          ),
+                        ]
                       ),
+
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget> [
+                          new NumberPad(
+                            userText: '$seven',
+                            onPressed: () {
+                              setState((){
+                                initialIO = initialIO + seven;
+                              });
+                            }
+                          ),
+                          new NumberPad(
+                            userText: '$eight',
+                            onPressed: () {
+                              setState((){
+                                initialIO = initialIO + eight;
+                              });
+                            }
+                          ),
+                          new NumberPad(
+                            userText: '$nine',
+                            onPressed: () {
+                              setState((){
+                                initialIO = initialIO + nine;
+                              });
+                            }
+                          ),
+                        ]
+                      ),
+
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget> [
+                          new NumberPad(
+                            userText: '$zero',
+                            onPressed: () {
+                              setState((){
+                                initialIO = initialIO + zero;
+                              });
+                            }
+                          ),
+                          new NumberPad(
+                            userText: '$plus',
+                            onPressed: () {
+                              setState((){
+                                initialIO = initialIO + ' $plus ';
+                              });
+                            }
+                          ),
+                          new NumberPad(
+                            userText: '$minus',
+                            onPressed: () {
+                              setState((){
+                                initialIO = initialIO + ' $minus ';
+                              });
+                            }
+                          ),
+                        ]
+                      ),
+
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget> [
+                          new NumberPad(
+                            userText: '$equals',
+                            onPressed: () {
+                              setState((){
+                                if (initialIO == easterEggNumber){
+                                  initialIO = easterEgg;
+                                } else {
+                                  initialIO = evaluateExpression(initialIO);
+                                }
+                              });
+                            }
+                          ),
+                          new NumberPad(
+                            userText: '$times',
+                            onPressed: () {
+                              setState((){
+                                initialIO = initialIO + ' $times ';
+                              });
+                            }
+                          ),
+                          new NumberPad(
+                            userText: '$by',
+                            onPressed: () {
+                              setState((){
+                                initialIO = initialIO + ' $by ';
+                              });
+                            }
+                          ),
+                        ]
+                      ),
+
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget> [
+                          new NumberPad(
+                            userText: '$clearScreen',
+                            onPressed: () {
+                              setState((){
+                                initialIO = '';
+                              });
+                            }
+                          ),
+                          new NumberPad(
+                            userText: '$exitScreen',
+                            onPressed: () {
+                              exit(0);
+                            }
+                          ),
+                          new NumberPad(
+                            userText: '$decimalPoint',
+                            onPressed: () {
+                              setState((){
+                                initialIO = initialIO + '$decimalPoint';
+                              });
+                            }
+                          ),
+                        ]
+                      ),
+
                     ]
                   ),
-                  new Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget> [
-                    new Padding(
-                      padding: EdgeInsets.all(stdPadding),
-                      child:new RaisedButton(
-                        shape: CircleBorder(),
-                        padding: EdgeInsets.all(stdPadding),
-                        color: accentColor,
-                        child: new Text(
-                          '$seven',
-                          style: new TextStyle(
-                            color: mainColor,
-                            fontSize: stdFontSize,
-                            fontFamily: '$defaultFont'
-                          )
-                        ),
-                        onPressed: () {
-                          setState((){
-                            initialIO = initialIO + seven;
-                          });
-                        }
-                      ),
-                    ),
-                    new Padding(
-                      padding: EdgeInsets.all(stdPadding),
-                      child:new RaisedButton(
-                        shape: CircleBorder(),
-                        padding: EdgeInsets.all(stdPadding),
-                        color: accentColor,
-                        child: new Text(
-                          '$eight',
-                          style: new TextStyle(
-                            color: mainColor,
-                            fontSize: stdFontSize,
-                            fontFamily: '$defaultFont'
-                          )
-                        ),
-                        onPressed: () {
-                          setState((){
-                            initialIO = initialIO + eight;
-                          });
-                        }
-                      ),
-                    ),
-                    new Padding(
-                      padding: EdgeInsets.all(stdPadding),
-                      child:new RaisedButton(
-                        shape: CircleBorder(),
-                        padding: EdgeInsets.all(stdPadding),
-                        color: accentColor,
-                        child: new Text(
-                          '$nine',
-                          style: new TextStyle(
-                            color: mainColor,
-                            fontSize: stdFontSize,
-                            fontFamily: '$defaultFont'
-                          )
-                        ),
-                        onPressed: () {
-                          setState((){
-                            initialIO = initialIO + nine;
-                          });
-                        }
-                      ),
-                    ),
-                  ]
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget> [
-                  new Padding(
-                    padding: EdgeInsets.all(stdPadding),
-                    child:new RaisedButton(
-                      shape: CircleBorder(),
-                      padding: EdgeInsets.all(stdPadding),
-                      color: accentColor,
-                      child: new Text(
-                        '$by',
-                        style: new TextStyle(
-                          color: mainColor,
-                          fontSize: stdFontSize,
-                          fontFamily: '$defaultFont'
-                        )
-                      ),
-                      onPressed: () {
-                        setState((){
-                          initialIO = initialIO + ' $by ';
-                        });
-                      }
-                    ),
-                  ),
-                  new Padding(
-                    padding: EdgeInsets.all(stdPadding),
-                    child:new RaisedButton(
-                      shape: CircleBorder(),
-                      padding: EdgeInsets.all(stdPadding),
-                      color: accentColor,
-                      child: new Text(
-                        '=',
-                        style: new TextStyle(
-                          color: mainColor,
-                          fontSize: stdFontSize,
-                          fontFamily: '$defaultFont'
-                        )
-                      ),
-                      onPressed: () {
-                        setState((){
-                          if (initialIO == easterEggNumber) {
-                            initialIO = easterEgg;
-                          } else {
-                            initialIO = evaluateExpression(initialIO);
-                          }
-                        });
-                      }
-                    ),
-                  ),
-                new Padding(
-                  padding: EdgeInsets.all(stdPadding),
-                  child:new RaisedButton(
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.all(stdPadding),
-                    color: accentColor,
-                    child: new Text(
-                      '$zero',
-                      style: new TextStyle(
-                        color: mainColor,
-                        fontSize: stdFontSize,
-                        fontFamily: '$defaultFont'
-                      )
-                    ),
-                    onPressed: () {
-                      setState((){
-                        initialIO = initialIO + '$zero';
-                      });
-                    }
-                  ),
-                ),
-              ]
-            ),
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget> [
-                new Padding(
-                  padding: EdgeInsets.all(stdPadding),
-                  child:new RaisedButton(
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.all(stdPadding),
-                    color: accentColor,
-                    child: new Text(
-                      '$plus',
-                      style: new TextStyle(
-                        color: mainColor,
-                        fontSize: stdFontSize,
-                        fontFamily: '$defaultFont'
-                      )
-                    ),
-                    onPressed: () {
-                      setState((){
-                        initialIO = initialIO + ' $plus ';
-                      });
-                    }
-                  ),
-                ),
-                new Padding(
-                  padding: EdgeInsets.all(stdPadding),
-                  child:new RaisedButton(
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.all(stdPadding),
-                    color: accentColor,
-                    child: new Text(
-                      '$times',
-                      style: new TextStyle(
-                        color: mainColor,
-                        fontSize: stdFontSize,
-                        fontFamily: '$defaultFont'
-                      )
-                    ),
-                    onPressed: () {
-                      setState((){
-                        initialIO = initialIO + ' $times ';
-                      });
-                    }
-                  ),
-                ),
-                new Padding(
-                  padding: EdgeInsets.all(stdPadding),
-                  child:new RaisedButton(
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.all(stdPadding),
-                    color: accentColor,
-                    child: new Text(
-                      '$minus',
-                      style: new TextStyle(
-                        color: mainColor,
-                        fontSize: stdFontSize,
-                        fontFamily: '$defaultFont'
-                      )
-                    ),
-                    onPressed: () {
-                      setState((){
-                        initialIO = initialIO + ' $minus ';
-                      });
-                    }
-                  )
-                ),
-              ]
-            ),
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget> [
-                new Padding(
-                  padding: EdgeInsets.all(stdPadding),
-                  child:new RaisedButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(stdRounding)
-                    ),
-                    padding: EdgeInsets.all(stdPadding),
-                    color: accentColor,
-                    child: new Text(
-                      '$clearScreen',
-                      style: new TextStyle(
-                        color: mainColor,
-                        fontSize: stdFontSize,
-                        fontFamily: '$defaultFont'
-                      )
-                    ),
-                    onPressed: () {
-                      setState((){
-                        initialIO = '';
-                      });
-                    }
-                  ),
-                ),
-                new Padding(
-                  padding: EdgeInsets.all(stdPadding),
-                  child:new RaisedButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(stdRounding)
-                    ),
-                    padding: EdgeInsets.all(stdPadding),
-                    color: accentColor,
-                    child: new Text(
-                      '$exitScreen',
-                      style: new TextStyle(
-                        color: mainColor,
-                        fontSize: stdFontSize,
-                        fontFamily: '$defaultFont'
-                      )
-                    ),
-                    onPressed: () {
-                      setState((){
-                        exit(0);
-                      });
-                    }
-                  ),
-                ),
-              ]
-            ),
-          ]
-        ),
+                )
+              ),
+              new SizedBox(height: stdSpacer),
+            ]
+          )
+        )
       )
-    ),
-    new SizedBox(
-      height: stdSpacer
-    ),
-  ]
-))));
-}}
+    );
+  }
+}

@@ -15,6 +15,9 @@ Since I didn't like the calculator that shipped with my Mac and my Android devic
 - ***Dark Horn*** (v.1.0.0):
   - ***[Download for Android](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/v.1.0.0/UnicornCalc-v1.0.0-DarkHorn-Release.apk) (15.62 MB)***
   - ***[Download for Mac OSX](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/v.1.0.0/UnicornCalc-v1.0.0-DarkHorn-Release.app.zip) (12.03 MB)***
+- ***Black Mamba*** (v.1.1.0):
+  - ***[Download for Android](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/v.1.1.0/UnicornCalc-v1.1.0-BlackMamba-Release.apk) (15.8 MB)***
+  - ***[Download for Mac OSX](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/v.1.1.0/UnicornCalc-v1.1.0-BlackMamba-Release.app.zip) (12.6 MB)***
 
 ## Building :hammer:
 
@@ -53,6 +56,12 @@ You have now generated a release build of *Unicorn Calc*.
 
 - upload to GitHub
 - initial release
+
+### Version 1.1.0: ***Black Mamba***
+
+- fixed some issues
+- fixed performance issues
+- better button layout
 
 ## Note :scroll:
 

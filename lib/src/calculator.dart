@@ -1,3 +1,8 @@
+/*
+UNICORN CALC by Alexander Abraham a.k.a. "The Black Unicorn".
+Licensed under the MIT license.
+*/
+
 String evaluateExpression(String expression){
   List<String> charList = expression.split(' ');
   double numOne = double.parse(charList[0]);
