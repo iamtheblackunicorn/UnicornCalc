@@ -13,8 +13,8 @@ Since I didn't like the calculator that shipped with my Mac and my Android devic
 ## Download :inbox_tray:
 
 - ***Dark Horn*** (v.1.0.0):
-  - ***[Download for Android](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/v.1.0.0/UnicornCalc-v1.0.0-DarkHorn-Release.apk) (17.7 MB)***
-  - ***[Download for Mac OSX](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/v.1.0.0/UnicornCalc-v1.0.0-DarkHorn-Release.app.zip) (17.7 MB)***
+  - ***[Download for Android](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/v.1.0.0/UnicornCalc-v1.0.0-DarkHorn-Release.apk) (16.4 MB)***
+  - ***[Download for Mac OSX](https://github.com/iamtheblackunicorn/UnicornCalc/releases/download/v.1.0.0/UnicornCalc-v1.0.0-DarkHorn-Release.app.zip) (13 MB)***
 
 ## Building :hammer:
 
