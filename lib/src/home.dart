@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'constants.dart';
 import 'calculator.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,9 @@ class CalculatorState extends State<Calculator> {
         child:Center(
           child: new Column(
             children: <Widget> [
+              new SizedBox(
+                height: stdSpacer
+              ),
               new Padding(
                 padding: EdgeInsets.all(stdPadding),
                 child: new Container(
@@ -41,6 +45,9 @@ class CalculatorState extends State<Calculator> {
                     )
                   )
                 )
+              ),
+              new SizedBox(
+                height: stdSpacer
               ),
               new Container(
                 width: stdWidth,
@@ -113,27 +120,6 @@ class CalculatorState extends State<Calculator> {
                             }
                           ),
                         ),
-                        new Padding(
-                          padding: EdgeInsets.all(stdPadding),
-                          child:new RaisedButton(
-                            shape: CircleBorder(),
-                            padding: EdgeInsets.all(stdPadding),
-                            color: accentColor,
-                            child: new Text(
-                              '$plus',
-                              style: new TextStyle(
-                                color: mainColor,
-                                fontSize: stdFontSize,
-                                fontFamily: '$defaultFont'
-                              )
-                            ),
-                            onPressed: () {
-                              setState((){
-                                initialIO = initialIO + ' $plus ';
-                              });
-                            }
-                          ),
-                        ),
                       ]
                     ),
                     new Row(
@@ -201,27 +187,6 @@ class CalculatorState extends State<Calculator> {
                             });
                           }
                         ),
-                      ),
-                      new Padding(
-                        padding: EdgeInsets.all(stdPadding),
-                        child:new RaisedButton(
-                          shape: CircleBorder(),
-                          padding: EdgeInsets.all(stdPadding),
-                          color: accentColor,
-                          child: new Text(
-                            '$minus',
-                            style: new TextStyle(
-                              color: mainColor,
-                              fontSize: stdFontSize,
-                              fontFamily: '$defaultFont'
-                            )
-                          ),
-                          onPressed: () {
-                            setState((){
-                              initialIO = initialIO + ' $minus ';
-                            });
-                          }
-                        )
                       ),
                     ]
                   ),
@@ -291,27 +256,6 @@ class CalculatorState extends State<Calculator> {
                         }
                       ),
                     ),
-                    new Padding(
-                      padding: EdgeInsets.all(stdPadding),
-                      child:new RaisedButton(
-                        shape: CircleBorder(),
-                        padding: EdgeInsets.all(stdPadding),
-                        color: accentColor,
-                        child: new Text(
-                          '$times',
-                          style: new TextStyle(
-                            color: mainColor,
-                            fontSize: stdFontSize,
-                            fontFamily: '$defaultFont'
-                          )
-                        ),
-                        onPressed: () {
-                          setState((){
-                            initialIO = initialIO + ' $times ';
-                          });
-                        }
-                      ),
-                    ),
                   ]
                 ),
                 new Row(
@@ -335,34 +279,34 @@ class CalculatorState extends State<Calculator> {
                         setState((){
                           initialIO = initialIO + ' $by ';
                         });
-                    }
-                  ),
-                ),
-                new Padding(
-                  padding: EdgeInsets.all(stdPadding),
-                  child:new RaisedButton(
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.all(stdPadding),
-                    color: accentColor,
-                    child: new Text(
-                      '=',
-                      style: new TextStyle(
-                        color: mainColor,
-                        fontSize: stdFontSize,
-                        fontFamily: '$defaultFont'
-                      )
+                      }
                     ),
-                    onPressed: () {
-                      setState((){
-                        if (initialIO == easterEggNumber) {
-                          initialIO = easterEgg;
-                        } else {
-                          initialIO = evaluateExpression(initialIO);
-                        }
-                      });
-                    }
                   ),
-                ),
+                  new Padding(
+                    padding: EdgeInsets.all(stdPadding),
+                    child:new RaisedButton(
+                      shape: CircleBorder(),
+                      padding: EdgeInsets.all(stdPadding),
+                      color: accentColor,
+                      child: new Text(
+                        '=',
+                        style: new TextStyle(
+                          color: mainColor,
+                          fontSize: stdFontSize,
+                          fontFamily: '$defaultFont'
+                        )
+                      ),
+                      onPressed: () {
+                        setState((){
+                          if (initialIO == easterEggNumber) {
+                            initialIO = easterEgg;
+                          } else {
+                            initialIO = evaluateExpression(initialIO);
+                          }
+                        });
+                      }
+                    ),
+                  ),
                 new Padding(
                   padding: EdgeInsets.all(stdPadding),
                   child:new RaisedButton(
@@ -384,10 +328,85 @@ class CalculatorState extends State<Calculator> {
                     }
                   ),
                 ),
+              ]
+            ),
+            new Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget> [
                 new Padding(
                   padding: EdgeInsets.all(stdPadding),
                   child:new RaisedButton(
                     shape: CircleBorder(),
+                    padding: EdgeInsets.all(stdPadding),
+                    color: accentColor,
+                    child: new Text(
+                      '$plus',
+                      style: new TextStyle(
+                        color: mainColor,
+                        fontSize: stdFontSize,
+                        fontFamily: '$defaultFont'
+                      )
+                    ),
+                    onPressed: () {
+                      setState((){
+                        initialIO = initialIO + ' $plus ';
+                      });
+                    }
+                  ),
+                ),
+                new Padding(
+                  padding: EdgeInsets.all(stdPadding),
+                  child:new RaisedButton(
+                    shape: CircleBorder(),
+                    padding: EdgeInsets.all(stdPadding),
+                    color: accentColor,
+                    child: new Text(
+                      '$times',
+                      style: new TextStyle(
+                        color: mainColor,
+                        fontSize: stdFontSize,
+                        fontFamily: '$defaultFont'
+                      )
+                    ),
+                    onPressed: () {
+                      setState((){
+                        initialIO = initialIO + ' $times ';
+                      });
+                    }
+                  ),
+                ),
+                new Padding(
+                  padding: EdgeInsets.all(stdPadding),
+                  child:new RaisedButton(
+                    shape: CircleBorder(),
+                    padding: EdgeInsets.all(stdPadding),
+                    color: accentColor,
+                    child: new Text(
+                      '$minus',
+                      style: new TextStyle(
+                        color: mainColor,
+                        fontSize: stdFontSize,
+                        fontFamily: '$defaultFont'
+                      )
+                    ),
+                    onPressed: () {
+                      setState((){
+                        initialIO = initialIO + ' $minus ';
+                      });
+                    }
+                  )
+                ),
+              ]
+            ),
+            new Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget> [
+                new Padding(
+                  padding: EdgeInsets.all(stdPadding),
+                  child:new RaisedButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(stdRounding)
+                    ),
                     padding: EdgeInsets.all(stdPadding),
                     color: accentColor,
                     child: new Text(
@@ -405,11 +424,38 @@ class CalculatorState extends State<Calculator> {
                     }
                   ),
                 ),
+                new Padding(
+                  padding: EdgeInsets.all(stdPadding),
+                  child:new RaisedButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(stdRounding)
+                    ),
+                    padding: EdgeInsets.all(stdPadding),
+                    color: accentColor,
+                    child: new Text(
+                      '$exitScreen',
+                      style: new TextStyle(
+                        color: mainColor,
+                        fontSize: stdFontSize,
+                        fontFamily: '$defaultFont'
+                      )
+                    ),
+                    onPressed: () {
+                      setState((){
+                        exit(0);
+                      });
+                    }
+                  ),
+                ),
               ]
-            )
-          ])))]
-        )
-      ))
-    );
-  }
-}
+            ),
+          ]
+        ),
+      )
+    ),
+    new SizedBox(
+      height: stdSpacer
+    ),
+  ]
+))));
+}}
